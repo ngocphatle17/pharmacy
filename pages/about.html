@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – Spring Creek Pharmacy</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <div class="page-hero">
+      <h1>About Us</h1>
+      <p>Learn more about Spring Creek Pharmacy and our commitment to the Plano community.</p>
+    </div>
+
+    <div class="container" style="text-align: center; padding: 6rem 2rem;">
+      <div style="max-width: 500px; margin: 0 auto;">
+        <div style="width: 80px; height: 80px; background: rgba(97,60,56,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#613C38" stroke-width="1.5">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h2 style="font-family:'Playfair Display',serif; color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem;" id="team">Our Story</h2>
+        <p style="color: var(--text-light); line-height: 1.8; font-size: 1rem;">This page is coming soon. We're working on sharing our story, team, and mission with you.</p>
+        <div id="mission" style="margin-top: 3rem;">
+          <a href="contact.html" class="btn btn-primary">Contact Us in the Meantime</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../js/layout.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const logo = document.querySelector('.logo-wrap');
+      if (logo) logo.setAttribute('href', '../index.html');
+    });
+  </script>
+</body>
+</html>

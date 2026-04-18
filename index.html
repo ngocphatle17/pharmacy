@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Creek Pharmacy – Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .home-hero { padding: 7rem 2rem; }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .badge svg { width: 12px; height: 12px; color: #29b5c8; }
+    .why-us {
+      background: var(--white);
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .why-card {
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .why-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--primary);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .why-card .num span { color: var(--accent); }
+    .why-card h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+    }
+    @media(max-width:768px){
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="home-hero">
+      <div class="home-hero-content">
+        <div class="hero-badges">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Trusted Compounding
+          </span>
+          <span class="badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Personalized Care
+          </span>
+        </div>
+        <h1>Your <span>Health</span> is Our<br>Top Priority</h1>
+        <p>Spring Creek Pharmacy offers expert retail, non-sterile, and sterile compounding services — tailored to your unique needs in Plano, TX.</p>
+        <div>
+          <a href="pages/services.html" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Our Services
+          </a>
+          <a href="pages/contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO STRIP -->
+    <div class="info-strip">
+      <div class="info-strip-inner">
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Location</h4>
+            <p>230 W Parker Rd, Plano TX</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.62 4.48 2 2 0 0 1 3.59 2.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/></svg>
+          </div>
+          <div>
+            <h4>Call Us</h4>
+            <p>(469) 366-9367</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon–Fri · 9 AM – 5:30 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES OVERVIEW -->
+    <section style="padding: 5rem 2rem; background: var(--cream);">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header">
+          <span class="eyebrow">What We Offer</span>
+          <h2>Pharmacy Services</h2>
+        </div>
+        <div class="services-grid">
+          <a class="service-card" href="pages/services.html#retail">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-10 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+            </div>
+            <h3>Retail Pharmacy</h3>
+            <p>Convenient prescription filling, over-the-counter medications, and wellness products for your everyday needs.</p>
+          </a>
+          <a class="service-card" href="pages/services.html#non-sterile">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+            </div>
+            <h3>Non-Sterile Compounding</h3>
+            <p>Custom-formulated creams, capsules, lozenges, and more — tailored doses made for your unique prescription requirements.</p>
+          </a>
+          <a class="service-card" href="pages/services.html#sterile">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 0 0-1.022-.547l-2.387-.477a6 6 0 0 0-3.86.517l-.318.158a6 6 0 0 1-3.86.517L6.05 15.21a2 2 0 0 0-1.806.547M8 4h8l-1 1v5.172a2 2 0 0 0 .586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 0 0 9 10.172V5L8 4z"/></svg>
+            </div>
+            <h3>Sterile Compounding</h3>
+            <p>Precision-prepared sterile injectables, IV admixtures, and ophthalmic preparations in a controlled clean-room environment.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPOUNDING TREATMENTS -->
+    <section style="padding: 5rem 2rem; background: var(--white);">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header"> 
+          <h2>Compounding Treatments</h2>
+        </div>
+        <div class="compound-grid">
+          <a class="compound-card" href="pages/services.html#non-sterile">
+            <div class="compound-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="5" height="9" rx="2.5"/><path d="M5 7h5"/><rect x="3" y="11" width="9" height="4" rx="1"/><path d="M7 15v5"/></svg>
+            </div>
+            <h3>Dermatology</h3>
+          </a>
+          <a class="compound-card" href="pages/services.html#non-sterile">
+            <div class="compound-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.5 2 6 4.5 6 8c0 2.8 1.8 5.2 4.5 6.3V17h3v-2.7C16.2 13.2 18 10.8 18 8c0-3.5-2.5-6-6-6z"/><path d="M9.5 8.5c0-1.4 1.1-2.5 2.5-2.5"/><circle cx="17" cy="4" r="1.5"/><path d="M18 5.5l1.5 1.5"/></svg>
+            </div>
+            <h3>Hormone Replacement Therapy (HRT) and Anti-Aging</h3>
+          </a>
+          <a class="compound-card" href="pages/services.html#non-sterile">
+            <div class="compound-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="14" r="5"/><path d="M18.5 5.5l-5 5"/><path d="M15 5h4v4"/></svg>
+            </div>
+            <h3>Men's Health &amp; Wellness</h3>
+          </a>
+          <a class="compound-card" href="pages/services.html#non-sterile">
+            <div class="compound-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M12 13v8"/><path d="M9 18h6"/></svg>
+            </div>
+            <h3>Women's Health &amp; Wellness</h3>
+          </a>
+          <a class="compound-card" href="pages/services.html#sterile">
+            <div class="compound-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12V7a2.5 2.5 0 0 0-5 0v5a2.5 2.5 0 0 0 2.5 2.5z"/><path d="M14.5 12a2.5 2.5 0 0 0 2.5-2.5V7a2.5 2.5 0 0 0-5 0v2.5A2.5 2.5 0 0 0 14.5 12z"/><path d="M8.5 14.5C8.5 17.5 10 20 12 21c2-1 3.5-3.5 3.5-6.5"/><path d="M12 21v-6.5"/></svg>
+            </div>
+            <h3>Pain Management</h3>
+          </a>
+          <a class="compound-card" href="pages/services.html#non-sterile">
+            <div class="compound-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v5"/><path d="M7.5 7.5 11 11"/><path d="M16.5 7.5 13 11"/><circle cx="12" cy="14" r="4"/><path d="M8 20h8"/><path d="M10 22h4"/></svg>
+            </div>
+            <h3>Weight Loss</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us">
+      <div class="section-header" style="max-width:1200px;margin:0 auto 2.5rem;">
+        <span class="eyebrow">Why Meds Express Pharmacy</span>
+        <h2>Committed to Excellence</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="num">10<span>+</span></div>
+          <h4>Years of Service</h4>
+        </div>
+        <div class="why-card">
+          <div class="num">3<span>k</span></div>
+          <h4>Patients Served</h4>
+        </div>
+        <div class="why-card">
+          <div class="num">100<span>%</span></div>
+          <h4>Satisfaction Rate</h4>
+        </div>
+        <div class="why-card">
+          <div class="num">3</div>
+          <h4>Service Categories</h4>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/layout.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Fix paths: homepage is at root, not in /pages/
+      const logo = document.querySelector('.logo-wrap');
+      if (logo) logo.setAttribute('href', 'index.html');
+      const logoImg = document.querySelector('.logo-img');
+      if (logoImg) logoImg.setAttribute('src', 'images/logo.png');
+      document.querySelectorAll('.site-nav a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('../')) a.setAttribute('href', href.replace('../', ''));
+      });
+      document.querySelectorAll('.footer-top a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('../')) a.setAttribute('href', href.replace('../', ''));
+      });
+    });
+  </script>
+</body>
+</html>

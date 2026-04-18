@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy Services – Spring Creek Pharmacy</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <div class="page-hero">
+      <h1>Pharmacy Services</h1>
+      <p>Retail, non-sterile, and sterile compounding — customized solutions for every patient.</p>
+    </div>
+
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="eyebrow">Tailored to You</span>
+        <h2>Our Compounding &amp; Retail Services</h2>
+      </div>
+
+      <div class="services-detail-grid">
+        <!-- RETAIL -->
+        <div class="service-detail-card" id="retail">
+          <div class="card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-10 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+            </svg>
+            <h3>Retail</h3>
+          </div>
+          <div class="card-body">
+            <p>Our retail pharmacy offers a full range of prescription medications, over-the-counter products, and personalized consultation to support your everyday health needs.</p>
+            <p>We work closely with your prescribers to ensure accurate, timely dispensing and take the time to answer all your medication questions.</p>
+            <ul>
+              <li>Prescription filling &amp; refills</li>
+              <li>OTC medications &amp; supplements</li>
+              <li>Medication therapy management</li>
+              <li>Vaccinations &amp; immunizations</li>
+              <li>Drug interaction reviews</li>
+              <li>Insurance &amp; copay assistance</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- NON-STERILE -->
+        <div class="service-detail-card" id="non-sterile">
+          <div class="card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+            </svg>
+            <h3>Non-Sterile Compounding</h3>
+          </div>
+          <div class="card-body">
+            <p>We specialize in custom non-sterile preparations for patients who need unique dosages, formulations, or flavor profiles not available commercially.</p>
+            <p>Our licensed compounding pharmacists prepare every prescription with precision, ensuring consistent quality and safety in every batch.</p>
+            <ul>
+              <li>Custom creams &amp; ointments</li>
+              <li>Capsules &amp; troches</li>
+              <li>Flavored oral suspensions</li>
+              <li>Hormone replacement therapy</li>
+              <li>Dermatological preparations</li>
+              <li>Veterinary compounds</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- STERILE -->
+        <div class="service-detail-card" id="sterile">
+          <div class="card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M19.428 15.428a2 2 0 0 0-1.022-.547l-2.387-.477a6 6 0 0 0-3.86.517l-.318.158a6 6 0 0 1-3.86.517L6.05 15.21a2 2 0 0 0-1.806.547M8 4h8l-1 1v5.172a2 2 0 0 0 .586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 0 0 9 10.172V5L8 4z"/>
+            </svg>
+            <h3>Sterile Compounding</h3>
+          </div>
+          <div class="card-body">
+            <p>Our ISO-certified clean-room facility enables the preparation of sterile products with the highest standards of purity and safety — essential for injectable and ophthalmic medications.</p>
+            <p>All sterile preparations comply with USP &lt;797&gt; guidelines and undergo rigorous quality checks before dispensing.</p>
+            <ul>
+              <li>Injectable preparations</li>
+              <li>IV admixtures &amp; infusions</li>
+              <li>Ophthalmic drops &amp; ointments</li>
+              <li>Nasal sprays</li>
+              <li>Pain management compounds</li>
+              <li>USP &lt;797&gt; compliant processes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Banner -->
+      <div style="margin-top: 4rem; background: var(--primary); border-radius: 16px; padding: 3rem; text-align: center; color: var(--white);">
+        <h2 style="font-family:'Playfair Display',serif; font-size: 2rem; margin-bottom: 1rem;">Need a Custom Compound?</h2>
+        <p style="opacity:0.85; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Our pharmacists are ready to work with you and your provider to create the exact formulation you need.</p>
+        <a href="contact.html" class="btn btn-primary" style="background: var(--accent); border-color: var(--accent);">Contact Our Team</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../js/layout.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const logo = document.querySelector('.logo-wrap');
+      if (logo) logo.setAttribute('href', '../index.html');
+      document.querySelectorAll('.site-nav a, .footer-top a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('../')) return;
+        if (href && href.startsWith('pages/')) a.setAttribute('href', '../' + href);
+        if (href && href === '../index.html') return;
+      });
+    });
+  </script>
+</body>
+</html>
