@@ -3,32 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spring Creek Pharmacy – Home</title>
+  <title>Meds Express Pharmacy – Plano, TX</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .home-hero { padding: 7rem 2rem; }
+    /* ── HERO ─────────────────────────────── */
+    .home-hero {
+      padding: 9rem 2rem;
+      position: relative;
+      overflow: hidden;
+      background: url('images/bg-hero1.jpg') center center / 100% auto no-repeat;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(74,45,41,0.82) 40%, rgba(74,45,41,0.45) 100%);
+    }
+    .home-hero-content {
+      position: relative;
+      max-width: 680px;
+      text-align: left;
+    }
     .hero-badges {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: rgba(255,255,255,0.9);
-      padding: 0.35rem 0.9rem;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.95);
+      padding: 0.5rem 1.2rem;
       border-radius: 20px;
-      font-size: 0.78rem;
+      font-size: 0.92rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
     }
-    .badge svg { width: 12px; height: 12px; color: #29b5c8; }
+    .home-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--white);
+    }
+    .home-hero h1 span { color: var(--accent); }
+    .home-hero p {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      max-width: 560px;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── PHOTO BANNER ─────────────────────── */
+    .photo-banner {
+      height: 320px;
+      background: url('images/bg-hero2.jpg') center 40% / cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(74,45,41,0.6);
+    }
+    .photo-banner-text {
+      position: relative;
+      text-align: center;
+      color: var(--white);
+      padding: 2rem;
+    }
+    .photo-banner-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      margin-bottom: 0.75rem;
+    }
+    .photo-banner-text p {
+      font-size: 1.25rem;
+      opacity: 0.88;
+      max-width: 550px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ── WHY US ───────────────────────────── */
     .why-us {
       background: var(--white);
       padding: 5rem 2rem;
@@ -41,13 +108,10 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .why-card {
-      text-align: center;
-      padding: 1.5rem;
-    }
+    .why-card { text-align: center; padding: 1.5rem; }
     .why-card .num {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 3.8rem;
       color: var(--primary);
       font-weight: 700;
       line-height: 1;
@@ -55,13 +119,16 @@
     }
     .why-card .num span { color: var(--accent); }
     .why-card h4 {
-      font-size: 0.85rem;
+      font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-light);
     }
     @media(max-width:768px){
       .why-grid { grid-template-columns: repeat(2,1fr); }
+      .home-hero-content { text-align: center; }
+      .hero-badges { justify-content: center; }
+      .hero-btns { justify-content: center; }
     }
   </style>
 </head>
@@ -69,26 +136,18 @@
   <div id="header-placeholder"></div>
 
   <main>
+
     <!-- HERO -->
     <section class="home-hero">
       <div class="home-hero-content">
         <div class="hero-badges">
-          <span class="badge">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Trusted Compounding
-          </span>
-          <span class="badge">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Personalized Care
-          </span>
+          <span class="badge">✦ Trusted Compounding</span>
+          <span class="badge">✦ Personalized Care</span>
         </div>
         <h1>Your <span>Health</span> is Our<br>Top Priority</h1>
-        <p>Spring Creek Pharmacy offers expert retail, non-sterile, and sterile compounding services — tailored to your unique needs in Plano, TX.</p>
-        <div>
-          <a href="pages/services.html" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            Our Services
-          </a>
+        <p>Meds Express Pharmacy offers expert retail, non-sterile, and sterile compounding services — tailored to your unique needs in Plano, TX.</p>
+        <div class="hero-btns">
+          <a href="pages/services.html" class="btn btn-primary">Our Services</a>
           <a href="pages/contact.html" class="btn btn-outline">Contact Us</a>
         </div>
       </div>
@@ -147,14 +206,14 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
             </div>
             <h3>Non-Sterile Compounding</h3>
-            <p>Custom-formulated creams, capsules, lozenges, and more — tailored doses made for your unique prescription requirements.</p>
+            <p>Custom-formulated creams, capsules, lozenges, and more — tailored doses for your unique prescription requirements.</p>
           </a>
           <a class="service-card" href="pages/services.html#sterile">
             <div class="icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 0 0-1.022-.547l-2.387-.477a6 6 0 0 0-3.86.517l-.318.158a6 6 0 0 1-3.86.517L6.05 15.21a2 2 0 0 0-1.806.547M8 4h8l-1 1v5.172a2 2 0 0 0 .586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 0 0 9 10.172V5L8 4z"/></svg>
             </div>
             <h3>Sterile Compounding</h3>
-            <p>Precision-prepared sterile injectables, IV admixtures, and ophthalmic preparations in a controlled clean-room environment.</p>
+            <p>Precision-prepared sterile injectables, IV admixtures, and ophthalmic preparations in a certified clean-room environment.</p>
           </a>
         </div>
       </div>
@@ -163,8 +222,9 @@
     <!-- COMPOUNDING TREATMENTS -->
     <section style="padding: 5rem 2rem; background: var(--white);">
       <div style="max-width: 1200px; margin: 0 auto;">
-        <div class="section-header"> 
-          <h2>Compounding Treatments</h2>
+        <div class="section-header">
+          <span class="eyebrow">Compounding Pharmacy Services</span>
+          <h2>Specializing in HRT, IV/Injectable Therapies<br>and Hormone Pellets</h2>
         </div>
         <div class="compound-grid">
           <a class="compound-card" href="pages/services.html#non-sterile">
@@ -175,7 +235,7 @@
           </a>
           <a class="compound-card" href="pages/services.html#non-sterile">
             <div class="compound-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.5 2 6 4.5 6 8c0 2.8 1.8 5.2 4.5 6.3V17h3v-2.7C16.2 13.2 18 10.8 18 8c0-3.5-2.5-6-6-6z"/><path d="M9.5 8.5c0-1.4 1.1-2.5 2.5-2.5"/><circle cx="17" cy="4" r="1.5"/><path d="M18 5.5l1.5 1.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.5 2 6 4.5 6 8c0 2.8 1.8 5.2 4.5 6.3V17h3v-2.7C16.2 13.2 18 10.8 18 8c0-3.5-2.5-6-6-6z"/><circle cx="17" cy="4" r="1.5"/><path d="M18 5.5l1.5 1.5"/></svg>
             </div>
             <h3>Hormone Replacement Therapy (HRT) and Anti-Aging</h3>
           </a>
@@ -207,10 +267,19 @@
       </div>
     </section>
 
+    <!-- PILL BOTTLES PHOTO BANNER -->
+    <div class="photo-banner">
+      <div class="photo-banner-text">
+        <h2>Precision. Care. Trust.</h2>
+        <p>Every prescription filled with accuracy and compassion — the Meds Express way.</p>
+        <a href="pages/contact.html" class="btn btn-primary">Get In Touch</a>
+      </div>
+    </div>
+
     <!-- WHY US -->
     <section class="why-us">
       <div class="section-header" style="max-width:1200px;margin:0 auto 2.5rem;">
-        <span class="eyebrow">Why Meds Express Pharmacy</span>
+        <span class="eyebrow">Why Meds Express</span>
         <h2>Committed to Excellence</h2>
       </div>
       <div class="why-grid">
@@ -232,13 +301,13 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <div id="footer-placeholder"></div>
   <script src="js/layout.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Fix paths: homepage is at root, not in /pages/
       const logo = document.querySelector('.logo-wrap');
       if (logo) logo.setAttribute('href', 'index.html');
       const logoImg = document.querySelector('.logo-img');
