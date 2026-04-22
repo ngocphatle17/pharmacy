@@ -12,13 +12,7 @@ const headerHTML = `
         <a class="nav-link" href="../index.html">Home</a>
       </div>
       <div class="nav-item">
-        <span class="nav-link has-dropdown">
-          About Us
-          <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg>
-        </span>
-        <div class="dropdown">
-          <a href="../pages/about.html">Our Story</a>
-        </div>
+        <a class="nav-link" href="../pages/about.html">About Us</a>
       </div>
       <div class="nav-item">
         <span class="nav-link has-dropdown">
@@ -117,14 +111,6 @@ const footerHTML = `
 `;
 
 // ─── INJECT ─────────────────────────────────────────────────────────────────
-// Load EmailJS SDK
-(function() {
-  const script = document.createElement('script');
-  script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-  script.onload = () => emailjs.init('j52a91vy-50MXxa-P');
-  document.head.appendChild(script);
-})();
-
 document.addEventListener('DOMContentLoaded', () => {
   const headerTarget = document.getElementById('header-placeholder');
   const footerTarget = document.getElementById('footer-placeholder');
@@ -138,7 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btn && nav) nav.classList.toggle('open');
   });
 
-  // Highlight active nav
+  // Select placeholder color
+  document.addEventListener('change', (e) => {
+    if (e.target && e.target.id === 'ft-reason') {
+      e.target.classList.toggle('placeholder', e.target.value === '');
+    }
+  });
+  const sel = document.getElementById('ft-reason');
+  if (sel) sel.classList.add('placeholder');
   const links = document.querySelectorAll('.nav-link');
   const path = window.location.pathname;
   links.forEach(link => {
@@ -161,38 +154,38 @@ function footerSubmit() {
     return;
   }
 
-  const btn = document.querySelector('.footer-form button');
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-
   const now = new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' });
+  const subject = encodeURIComponent('New Patient Inquiry – ' + reason + ' | ' + first + ' ' + last);
+  const body = encodeURIComponent(
+`════════════════════════════════════
+  MEDS EXPRESS PHARMACY
+  New Patient Inquiry
+════════════════════════════════════
 
-  const templateParams = {
-    to_email:    'medsexpresspharmacyrx@gmail.com',
-    from_name:   first + ' ' + last,
-    from_email:  email,
-    phone:       phone || 'Not provided',
-    reason:      reason,
-    message:     msg || 'None provided',
-    submitted:   now,
-    reply_to:    email,
-  };
+Submitted: ${now}
 
-  emailjs.send('service_5kygn7w', 'template_lo1s1r3', templateParams)
-    .then(() => {
-      document.getElementById('ft-success').style.display = 'block';
-      btn.textContent = '✓ Submitted';
-      document.getElementById('ft-first').value = '';
-      document.getElementById('ft-last').value = '';
-      document.getElementById('ft-email').value = '';
-      document.getElementById('ft-phone').value = '';
-      document.getElementById('ft-reason').value = '';
-      document.getElementById('ft-msg').value = '';
-    })
-    .catch((err) => {
-      console.error('EmailJS error:', err);
-      btn.disabled = false;
-      btn.textContent = 'Submit Inquiry';
-      alert('Something went wrong. Please try again or call us at (469) 366-9367.');
-    });
+────────────────────────────────────
+PATIENT INFORMATION
+────────────────────────────────────
+Full Name   : ${first} ${last}
+Email       : ${email}
+Phone       : ${phone || 'Not provided'}
+
+────────────────────────────────────
+INQUIRY DETAILS
+────────────────────────────────────
+Reason      : ${reason}
+
+Additional Notes:
+${msg || 'None provided'}
+
+════════════════════════════════════
+This inquiry was submitted via the
+Meds Express Pharmacy website.
+Please respond within 1 business day.
+════════════════════════════════════`
+  );
+
+  window.location.href = 'mailto:medsexpresspharmacyrx@gmail.com?subject=' + subject + '&body=' + body;
+  document.getElementById('ft-success').style.display = 'block';
 }

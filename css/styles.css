@@ -20,7 +20,7 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 19px; }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: 17px;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -271,6 +271,8 @@ body {
 }
 
 .footer-form select option { background: var(--primary); color: var(--white); }
+.footer-form select option[value=""] { color: rgba(255,255,255,0.45); }
+.footer-form select.placeholder { color: rgba(255,255,255,0.45); }
 
 .footer-form input::placeholder,
 .footer-form textarea::placeholder { color: rgba(255,255,255,0.45); }
