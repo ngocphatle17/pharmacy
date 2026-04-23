@@ -387,12 +387,15 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+  cursor: default;
+  pointer-events: none;
 }
 
 .compound-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 32px var(--shadow);
-  border-color: var(--primary-light);
+  transform: none;
+  box-shadow: 0 2px 12px var(--shadow);
+  border-color: var(--border);
+  cursor: default;
 }
 
 .compound-icon {
@@ -407,6 +410,13 @@ main {
   width: 54px;
   height: 54px;
   stroke: var(--primary);
+}
+
+.compound-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .compound-card h3 {
@@ -513,44 +523,54 @@ main {
 }
 
 .service-card {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 2rem;
+  background: transparent;
+  border-radius: 0;
+  padding: 2rem 1rem;
   text-align: center;
-  box-shadow: 0 4px 20px var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+  transition: none;
   text-decoration: none;
   color: var(--text);
-  border: 1px solid var(--border);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px var(--shadow);
+  transform: none;
 }
 
 .service-card .icon {
-  width: 64px;
-  height: 64px;
-  background: rgba(97, 60, 56, 0.1);
+  width: 110px;
+  height: 110px;
+  background: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 8px 24px rgba(97,60,56,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover .icon {
+  transform: none;
+  box-shadow: 0 8px 24px rgba(97,60,56,0.3);
 }
 
 .service-card .icon svg {
-  width: 32px;
-  height: 32px;
-  color: var(--primary);
+  width: 52px;
+  height: 52px;
+  color: var(--white);
+  stroke: var(--white);
 }
 
 .service-card h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
 }
 
 .service-card p {
@@ -569,7 +589,7 @@ main {
 }
 
 .info-strip-inner {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -861,6 +881,11 @@ a.icon-wrap:hover {
   padding: 2rem;
   text-align: center;
   color: var(--white);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-detail-card .card-header svg {
@@ -876,7 +901,7 @@ a.icon-wrap:hover {
 }
 
 .service-detail-card .card-body {
-  padding: 1.75rem;
+  padding: 1.25rem;
 }
 
 .service-detail-card .card-body p {

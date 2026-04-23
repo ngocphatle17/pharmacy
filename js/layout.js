@@ -15,14 +15,15 @@ const headerHTML = `
         <a class="nav-link" href="../pages/about.html">About Us</a>
       </div>
       <div class="nav-item">
-        <span class="nav-link has-dropdown">
+        <a class="nav-link has-dropdown" href="../pages/services.html">
           Pharmacy Services
           <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg>
-        </span>
+        </a>
         <div class="dropdown">
-          <a href="../pages/services.html#retail">Retail</a>
-          <a href="../pages/services.html#non-sterile">Non-Sterile Compounding</a>
-          <a href="../pages/services.html#sterile">Sterile Compounding</a>
+          <span style="display:block;padding:0.75rem 1.25rem;color:var(--text);font-size:0.95rem;border-bottom:1px solid var(--border);cursor:default;">Retail</span>
+          <span style="display:block;padding:0.75rem 1.25rem;color:var(--text);font-size:0.95rem;border-bottom:1px solid var(--border);cursor:default;">Non-Sterile Compounding</span>
+          <span style="display:block;padding:0.75rem 1.25rem;color:var(--text);font-size:0.95rem;border-bottom:1px solid var(--border);cursor:default;">Sterile Compounding</span>
+          <span style="display:block;padding:0.75rem 1.25rem;color:var(--text);font-size:0.95rem;cursor:default;">Delivery</span>
         </div>
       </div>
       <div class="nav-item">
@@ -65,7 +66,7 @@ const footerHTML = `
         </div>
         <div class="contact-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Mon–Fri: 9:00 AM – 5:30 PM</span>
+          <span>Mon–Fri: 9:00 AM – 5:30 PM | Sat: 9:00 AM – 5:00 PM</span>
         </div>
         <div class="contact-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
