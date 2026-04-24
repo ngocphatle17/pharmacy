@@ -5,6 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meds Express Pharmacy – Plano, TX</title>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── HERO ─────────────────────────────── */
+    .home-hero {
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      background: url('images/homepage.jpg') center center / cover no-repeat;
+      image-rendering: auto;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(74,45,41,0.82) 40%, rgba(74,45,41,0.45) 100%);
+    }
+    .home-hero-content {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+      justify-content: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.95);
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+    .home-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--white);
+    }
+    .home-hero h1 span { color: var(--accent); }
+    .home-hero p {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      max-width: 560px;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── PHOTO BANNER ─────────────────────── */
+    .photo-banner {
+      height: 320px;
+      background: url('images/bg-hero2.jpg') center 40% / cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(74,45,41,0.6);
+    }
+    .photo-banner-text {
+      position: relative;
+      text-align: center;
+      color: var(--white);
+      padding: 2rem;
+    }
+    .photo-banner-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      margin-bottom: 0.75rem;
+    }
+    .photo-banner-text p {
+      font-size: 1.25rem;
+      opacity: 0.88;
+      max-width: 550px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ── WHY US ───────────────────────────── */
+    .why-us {
+      background: var(--white);
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+      width: 100%;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .why-card { text-align: center; padding: 1.5rem; }
+    .why-card .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.8rem;
+      color: var(--primary);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .why-card .num span { color: var(--accent); }
+    .why-card h4 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+    }
+    @media(max-width:768px){
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+      .home-hero-content { text-align: center; }
+      .hero-badges { justify-content: center; }
+      .hero-btns { justify-content: center; }
+    }
+  </style>
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -18,8 +148,8 @@
           <span class="badge">✦ Trusted Compounding</span>
           <span class="badge">✦ Personalized Care</span>
         </div>
-        <h1>Your <span>Health</span> is Our Top Priority</h1>
-        <p>Meds Express Pharmacy offers expert retail, non-sterile, and sterile compounding services — tailored to your unique needs in Plano, TX.</p>
+        <h1 style="white-space: nowrap;">Your <span style="color:var(--white);">Health</span> is Our Top Priority</h1>
+        <p>Meds Express Pharmacy offers expert retail, non-sterile, and sterile compounding services in Plano, TX.</p>
         <div class="hero-btns">
           <a href="pages/services.html" class="btn btn-primary">Our Services</a>
           <a href="pages/contact.html" class="btn btn-outline">Contact Us</a>
@@ -36,7 +166,7 @@
           </div>
           <div>
             <h4>Location</h4>
-            <p>230 W Parker Rd<br>STE #210-B, Plano TX 75075</p>
+            <p>230 W Parker Rd Ste #210-B<br>Plano, TX 75075</p>
           </div>
         </div>
         <div class="info-item">
@@ -159,6 +289,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <div id="footer-placeholder"></div>

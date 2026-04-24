@@ -639,7 +639,7 @@ main {
 
 .info-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.25rem;
 }
 
@@ -653,6 +653,7 @@ main {
   justify-content: center;
   flex-shrink: 0;
   color: var(--white);
+  margin-top: 4px;
 }
 
 .info-item .info-icon svg {
