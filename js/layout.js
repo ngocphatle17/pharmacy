@@ -2,11 +2,9 @@
 const headerHTML = `
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <!-- LOGO -->
     <a class="logo-wrap" href="../index.html">
       <img class="logo-img" src="../images/logo.png" alt="Meds Express Pharmacy" />
     </a>
-    <!-- NAV -->
     <nav class="site-nav" id="site-nav">
       <div class="nav-item">
         <a class="nav-link" href="../index.html">Home</a>
@@ -30,8 +28,7 @@ const headerHTML = `
         <a class="nav-link" href="../pages/contact.html">Contact</a>
       </div>
     </nav>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -42,8 +39,6 @@ const headerHTML = `
 const footerHTML = `
 <footer class="site-footer">
   <div class="footer-top">
-
-    <!-- LEFT: Quick Links + Contact Info -->
     <div class="footer-left">
       <div class="footer-col">
         <h4>Quick Links</h4>
@@ -75,7 +70,6 @@ const footerHTML = `
       </div>
     </div>
 
-    <!-- RIGHT: Contact Form -->
     <div class="footer-form">
       <h4>Patient Inquiry Form</h4>
       <div class="footer-form-row">
@@ -103,7 +97,6 @@ const footerHTML = `
       </button>
       <p id="ft-success" style="display:none; color:rgba(255,255,255,0.85); font-size:0.82rem; margin-top:0.5rem;">✓ Inquiry submitted! We'll be in touch shortly.</p>
     </div>
-
   </div>
   <div class="footer-bottom">
     <p>© ${new Date().getFullYear()} Meds Express Pharmacy. All rights reserved. | 230 W Parker Rd Suite 210-B, Plano TX 75075</p>
@@ -118,11 +111,40 @@ document.addEventListener('DOMContentLoaded', () => {
   if (headerTarget) headerTarget.innerHTML = headerHTML;
   if (footerTarget) footerTarget.innerHTML = footerHTML;
 
-  // Hamburger toggle
+  // Hamburger toggle with animated X
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('#hamburger');
     const nav = document.getElementById('site-nav');
-    if (btn && nav) nav.classList.toggle('open');
+    if (btn && nav) {
+      const isOpen = nav.classList.toggle('open');
+      btn.classList.toggle('is-open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    }
+  });
+
+  // Close nav when a nav link is clicked (mobile)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('.site-nav a');
+    if (link) {
+      const nav = document.getElementById('site-nav');
+      const btn = document.getElementById('hamburger');
+      if (nav && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        if (btn) { btn.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
+      }
+    }
+  });
+
+  // Close nav when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#site-header')) {
+      const nav = document.getElementById('site-nav');
+      const btn = document.getElementById('hamburger');
+      if (nav && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        if (btn) { btn.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
+      }
+    }
   });
 
   // Select placeholder color
@@ -131,13 +153,18 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.classList.toggle('placeholder', e.target.value === '');
     }
   });
+
   const sel = document.getElementById('ft-reason');
   if (sel) sel.classList.add('placeholder');
+
+  // Active nav link
   const links = document.querySelectorAll('.nav-link');
   const path = window.location.pathname;
   links.forEach(link => {
-    if (link.href && link.href.includes && path.includes(link.getAttribute('href')?.split('/').pop()?.split('.')[0])) {
-      link.classList.add('active');
+    const href = link.getAttribute('href');
+    if (href) {
+      const page = href.split('/').pop().split('.')[0];
+      if (page && path.includes(page)) link.classList.add('active');
     }
   });
 });

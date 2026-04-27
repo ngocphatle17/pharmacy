@@ -6,133 +6,29 @@
   <title>Meds Express Pharmacy – Plano, TX</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* ── HERO ─────────────────────────────── */
+    /* ── HERO (index-specific overrides) ──── */
     .home-hero {
       padding: 5rem 2rem;
-      position: relative;
-      overflow: hidden;
       background: url('images/homepage.jpg') center center / cover no-repeat;
-      image-rendering: auto;
     }
     .home-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
       background: linear-gradient(to right, rgba(74,45,41,0.82) 40%, rgba(74,45,41,0.45) 100%);
     }
-    .home-hero-content {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .hero-badges {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.75rem;
-      justify-content: center;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: rgba(255,255,255,0.95);
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-    .home-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      color: var(--white);
-    }
-    .home-hero h1 span { color: var(--accent); }
-    .home-hero p {
-      font-size: 1.3rem;
-      color: rgba(255,255,255,0.88);
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
-      max-width: 560px;
-    }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    /* ── PHOTO BANNER ─────────────────────── */
+    /* ── PHOTO BANNER (index path) ───────── */
     .photo-banner {
-      height: 320px;
-      background: url('images/bg-hero2.jpg') center 40% / cover no-repeat;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .photo-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(74,45,41,0.6);
-    }
-    .photo-banner-text {
-      position: relative;
-      text-align: center;
-      color: var(--white);
-      padding: 2rem;
-    }
-    .photo-banner-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      margin-bottom: 0.75rem;
-    }
-    .photo-banner-text p {
-      font-size: 1.25rem;
-      opacity: 0.88;
-      max-width: 550px;
-      margin: 0 auto 1.5rem;
+      background-image: url('images/bg-hero2.jpg');
     }
 
-    /* ── WHY US ───────────────────────────── */
-    .why-us {
-      background: var(--white);
-      padding: 5rem 2rem;
-      border-top: 1px solid var(--border);
-      width: 100%;
+    /* ── WHY US ──────────────────────────── */
+    .why-us { padding: 5rem 2rem; }
+
+    @media (max-width: 768px) {
+      .home-hero { padding: 3.5rem 1.25rem; }
+      .why-us { padding: 3rem 1rem; }
     }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .why-card { text-align: center; padding: 1.5rem; }
-    .why-card .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.8rem;
-      color: var(--primary);
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-    .why-card .num span { color: var(--accent); }
-    .why-card h4 {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-light);
-    }
-    @media(max-width:768px){
-      .why-grid { grid-template-columns: repeat(2,1fr); }
-      .home-hero-content { text-align: center; }
-      .hero-badges { justify-content: center; }
-      .hero-btns { justify-content: center; }
+    @media (max-width: 420px) {
+      .home-hero { padding: 3rem 1rem; }
     }
   </style>
 </head>
@@ -148,8 +44,8 @@
           <span class="badge">✦ Trusted Compounding</span>
           <span class="badge">✦ Personalized Care</span>
         </div>
-        <h1 style="white-space: nowrap;">Your <span style="color:var(--white);">Health</span> is Our Top Priority</h1>
-        <p style="max-width: 520px; margin: 0 auto 2rem;">Meds Express Pharmacy offers expert retail, non-sterile, and sterile compounding services in Plano, TX.</p>
+        <h1>Your <span>Health</span> is Our Top Priority</h1>
+        <p>Meds Express Pharmacy offers expert retail, non-sterile, and sterile compounding services in Plano, TX.</p>
         <div class="hero-btns">
           <a href="pages/services.html" class="btn btn-outline">Our Services</a>
           <a href="pages/contact.html" class="btn btn-outline">Contact Us</a>
@@ -184,7 +80,7 @@
           </div>
           <div>
             <h4>Hours</h4>
-            <p>Mon–Fri · 9 AM – 5:30 PM &nbsp; Sat · 9 AM – 5:00 PM</p>
+            <p>Mon–Fri · 9 AM – 5:30 PM<br>Sat · 9 AM – 5:00 PM</p>
           </div>
         </div>
       </div>
@@ -196,7 +92,7 @@
         <div class="section-header">
           <h2>Pharmacy Services</h2>
         </div>
-        <div class="services-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="services-grid">
           <div class="service-card" style="pointer-events:none;cursor:default;">
             <div class="icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-10 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
@@ -237,55 +133,42 @@
           <h2>Compounding Pharmacy Services</h2>
         </div>
         <div class="compound-grid">
-
-          <!-- 1. HRT -->
           <div class="compound-card">
             <div class="compound-icon">
               <img src="images/icons/icon-hrt.png" alt="Hormone Replacement Therapy" class="compound-img">
             </div>
             <h3>Hormone Replacement Therapy (HRT) &amp; Anti-Aging</h3>
           </div>
-
-          <!-- 2. Men's Health -->
           <div class="compound-card">
             <div class="compound-icon">
               <img src="images/icons/icon-mens-health.png" alt="Men's Health" class="compound-img">
             </div>
             <h3>Men's Health &amp; Wellness</h3>
           </div>
-
-          <!-- 3. Women's Health -->
           <div class="compound-card">
             <div class="compound-icon">
               <img src="images/icons/icon-womens-health.png" alt="Women's Health" class="compound-img">
             </div>
             <h3>Women's Health &amp; Wellness</h3>
           </div>
-
-          <!-- 4. Dermatology -->
           <div class="compound-card">
             <div class="compound-icon">
               <img src="images/icons/icon-dermatology.png" alt="Dermatology" class="compound-img">
             </div>
             <h3>Dermatology</h3>
           </div>
-
-          <!-- 5. Pain Management -->
           <div class="compound-card">
             <div class="compound-icon">
               <img src="images/icons/icon-pain.png" alt="Pain Management" class="compound-img">
             </div>
             <h3>Pain Management</h3>
           </div>
-
-          <!-- 6. Weight Management -->
           <div class="compound-card">
             <div class="compound-icon">
               <img src="images/icons/icon-weight.png" alt="Weight Management" class="compound-img">
             </div>
             <h3>Weight Management</h3>
           </div>
-
         </div>
       </div>
     </section>
