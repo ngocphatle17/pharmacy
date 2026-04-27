@@ -434,12 +434,12 @@ main {
   .compound-grid { grid-template-columns: 1fr; }
 }
 
-/* ─── HOME HERO ──────────────────────────────── */
+/* ─── WHY US ─────────────────────────────────── */
 .home-hero {
   background: url('../images/homepage.jpg') center center / cover no-repeat;
   color: var(--white);
-  min-height: 600px;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
+  text-align: center;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -451,68 +451,32 @@ main {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(74, 45, 41, 0.62);
+  background: rgba(60, 20, 18, 0.6);
 }
 
 .home-hero-content {
   position: relative;
-  max-width: 960px;
+  max-width: 900px;
   width: 100%;
+  margin: 0 auto;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-badges {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.75rem;
-  justify-content: center;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: rgba(255,255,255,0.95);
-  padding: 0.5rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
 }
 
 .home-hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 700;
   line-height: 1.15;
-  margin-bottom: 1.25rem;
-  color: var(--white);
-  white-space: nowrap;
+  margin-bottom: 1.5rem;
 }
 
 .home-hero h1 span { color: var(--accent); }
 
 .home-hero p {
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.88);
+  font-size: 1.15rem;
+  opacity: 0.85;
   margin-bottom: 2.5rem;
-  line-height: 1.8;
-  max-width: 560px;
-  text-align: center;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  line-height: 1.7;
 }
 
 .btn {
@@ -621,6 +585,7 @@ main {
 }
 
 /* Info strips */
+
 .info-strip {
   background: var(--white);
   border-top: 1px solid var(--border);
@@ -976,83 +941,10 @@ a.icon-wrap:hover {
 
 .service-detail-card .card-body ul li:last-child { border-bottom: none; }
 
-/* ─── WHY US ───────────────────────────────────── */
-.why-us {
-  background: var(--white);
-  padding: 5rem 2rem;
-  border-top: 1px solid var(--border);
-  width: 100%;
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.why-card { text-align: center; padding: 1.5rem; }
-
-.why-card .num {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.8rem;
-  color: var(--primary);
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.why-card .num span { color: var(--accent); }
-
-.why-card h4 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-light);
-}
-
-/* ─── PHOTO BANNER ─────────────────────────────── */
-.photo-banner {
-  height: 320px;
-  background: url('../images/bg-hero2.jpg') center 40% / cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.photo-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(74,45,41,0.6);
-}
-
-.photo-banner-text {
-  position: relative;
-  text-align: center;
-  color: var(--white);
-  padding: 2rem;
-}
-
-.photo-banner-text h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  margin-bottom: 0.75rem;
-}
-
-.photo-banner-text p {
-  font-size: 1.25rem;
-  opacity: 0.88;
-  max-width: 550px;
-  margin: 0 auto 1.5rem;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .site-nav { display: none; }
-  .site-nav.open {
+  .site-nav.open { 
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -1066,22 +958,65 @@ a.icon-wrap:hover {
     align-items: stretch;
   }
   .hamburger { display: flex; }
-  .services-grid,
-  .services-detail-grid,
-  .info-strip-inner { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Hero */
+  .home-hero { padding: 3rem 1.5rem; }
+  .home-hero h1 { font-size: 1.8rem !important; white-space: normal !important; }
+  .home-hero p { font-size: 0.95rem; }
+  .hero-buttons { flex-direction: column; align-items: center; gap: 0.75rem; }
+  .hero-buttons .btn { width: 100%; max-width: 300px; text-align: center; }
+  .hero-badges { justify-content: center; }
+
+  /* Info strip */
+  .info-strip-inner { grid-template-columns: 1fr !important; gap: 1.25rem; }
+  .info-item { justify-content: flex-start; }
+
+  /* Pharmacy Services circles */
+  .services-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1.5rem; }
+
+  /* Compounding cards */
+  .compound-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1.25rem; }
+  .compound-card { padding: 1.5rem 1rem; }
+
+  /* Services detail page */
+  .services-detail-grid { grid-template-columns: 1fr !important; }
+
+  /* Contact page */
+  .contact-layout { grid-template-columns: 1fr !important; }
+  .map-embed { min-height: 260px; }
+
+  /* About page */
+  .about-section { grid-template-columns: 1fr !important; min-height: unset !important; }
+  .about-photo { height: 280px; }
+  .about-right { padding: 2.5rem 1.5rem; }
+  .about-right h2 { font-size: 1.8rem; }
+
+  /* Footer */
   .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
-  .dropdown {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    box-shadow: none;
-    border: none;
-    background: var(--cream);
-    border-radius: 0;
-    margin-left: 1rem;
-  }
-  .why-grid { grid-template-columns: repeat(2, 1fr); }
-  .home-hero h1 { white-space: normal; font-size: clamp(1.8rem, 6vw, 2.8rem); }
+  .footer-left { grid-template-columns: 1fr !important; }
+  .footer-form { grid-template-columns: 1fr !important; }
+  .footer-form-row { grid-template-columns: 1fr !important; }
+
+  /* Section headers */
+  .section-header h2 { font-size: 1.8rem; }
+
+  /* Page hero */
+  .page-hero { padding: 2.5rem 1.5rem; }
+  .page-hero h1 { font-size: 2rem; }
+
+  /* Buttons */
+  .btn { padding: 0.75rem 1.5rem; font-size: 0.85rem; }
+
+  /* Dropdown */
+  .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: var(--cream); border-radius: 0; margin-left: 1rem; }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens */
+  .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .compound-grid { grid-template-columns: 1fr !important; }
+  .home-hero h1 { font-size: 1.5rem !important; }
+  .info-strip { padding: 1.5rem 1rem; }
+  .site-header { padding: 0 1rem; }
+  .logo-text { font-size: 1rem; }
 }
