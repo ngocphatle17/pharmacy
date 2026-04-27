@@ -610,10 +610,11 @@ a.icon-wrap:hover { background: var(--primary-light); transform: scale(1.08); cu
   .home-hero h1 { font-size: clamp(1.75rem, 7vw, 2.5rem); white-space: normal; }
   .home-hero p { font-size: 1rem; }
 
-  .badge { font-size: 0.75rem; padding: 0.4rem 0.85rem; }
+  .badge { font-size: 0.72rem; padding: 0.38rem 0.7rem; letter-spacing: 0.05em; }
+  .hero-badges { flex-wrap: nowrap; gap: 0.5rem; }
 
-  .hero-btns { flex-direction: column; align-items: center; width: 100%; max-width: 280px; }
-  .btn { width: 100%; justify-content: center; padding: 0.8rem 1.5rem; }
+  .hero-btns { flex-direction: row; flex-wrap: nowrap; align-items: center; width: 100%; gap: 0.5rem; }
+  .btn { flex: 1; justify-content: center; padding: 0.8rem 0.5rem; font-size: 0.78rem; }
 
   /* Info strip */
   .info-strip { padding: 1.5rem 1rem; }
@@ -687,7 +688,8 @@ a.icon-wrap:hover { background: var(--primary-light); transform: scale(1.08); cu
   .why-grid { grid-template-columns: 1fr; }
   .why-card { padding: 0.875rem; }
 
-  .hero-btns { max-width: 260px; }
+  .hero-btns { gap: 0.4rem; }
+  .btn { font-size: 0.75rem; padding: 0.75rem 0.4rem; }
 
   .photo-banner { height: 180px; }
   .photo-banner-text h2 { font-size: 1.5rem; }
