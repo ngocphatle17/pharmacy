@@ -533,29 +533,31 @@ a.icon-wrap:hover { background: var(--primary-light); transform: scale(1.08); cu
   }
 }
 
-/* ─── SERVICES DETAIL 2×2 GRID ───────────────── */
+/* ─── SERVICES DETAIL GRID ───────────────────── */
+.services-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+
+/* Desktop: 1×4 horizontal */
 .services-detail-grid.services-detail-grid--4col {
-  grid-template-columns: repeat(2, 1fr) !important;
-  max-width: 860px;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Mobile: 2×2 */
 @media (max-width: 768px) {
   .services-detail-grid.services-detail-grid--4col {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 }
 
+/* Extra small: single column */
 @media (max-width: 420px) {
   .services-detail-grid.services-detail-grid--4col {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
 }
-
-/* ─── SERVICES DETAIL ────────────────────────── */
-.services-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
 
 .service-detail-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px var(--shadow); border: 1px solid var(--border); }
 
