@@ -96,6 +96,7 @@ const footerHTML = `
         Submit Inquiry
       </button>
       <p id="ft-success" style="display:none; color:rgba(255,255,255,0.85); font-size:0.82rem; margin-top:0.5rem;">✓ Inquiry submitted! We'll be in touch shortly.</p>
+      <p id="ft-error"   style="display:none; color:#f9a8a8; font-size:0.82rem; margin-top:0.5rem;">✗ Something went wrong. Please call us or try again.</p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -169,6 +170,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ─── EMAILJS ─────────────────────────────────────────────────────────────────
+// Fill in your three EmailJS credentials below, then save.
+const EMAILJS_PUBLIC_KEY  = 'bokVaZCEYsy7cxDKg';   // emailjs.com → Account → API Keys
+const EMAILJS_SERVICE_ID  = 'service_b20c99o';   // emailjs.com → Email Services
+const EMAILJS_TEMPLATE_ID = 'template_rx07yf2';  // emailjs.com → Email Templates
+
 function footerSubmit() {
   const first  = document.getElementById('ft-first').value.trim();
   const last   = document.getElementById('ft-last').value.trim();
@@ -182,38 +189,42 @@ function footerSubmit() {
     return;
   }
 
+  const btn        = document.querySelector('.footer-form button');
+  const successMsg = document.getElementById('ft-success');
+  const errorMsg   = document.getElementById('ft-error');
+
+  btn.disabled    = true;
+  btn.textContent = 'Sending…';
+  errorMsg.style.display = 'none';
+
   const now = new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' });
-  const subject = encodeURIComponent('New Patient Inquiry – ' + reason + ' | ' + first + ' ' + last);
-  const body = encodeURIComponent(
-`════════════════════════════════════
-  MEDS EXPRESS PHARMACY
-  New Patient Inquiry
-════════════════════════════════════
 
-Submitted: ${now}
+  emailjs.init(EMAILJS_PUBLIC_KEY);
 
-────────────────────────────────────
-PATIENT INFORMATION
-────────────────────────────────────
-Full Name   : ${first} ${last}
-Email       : ${email}
-Phone       : ${phone || 'Not provided'}
-
-────────────────────────────────────
-INQUIRY DETAILS
-────────────────────────────────────
-Reason      : ${reason}
-
-Additional Notes:
-${msg || 'None provided'}
-
-════════════════════════════════════
-This inquiry was submitted via the
-Meds Express Pharmacy website.
-Please respond within 1 business day.
-════════════════════════════════════`
-  );
-
-  window.location.href = 'mailto:medsexpresspharmacyrx@gmail.com?subject=' + subject + '&body=' + body;
-  document.getElementById('ft-success').style.display = 'block';
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    to_email:     'medsexpresspharmacyintake@gmail.com',
+    from_name:    first + ' ' + last,
+    from_email:   email,
+    phone:        phone || 'Not provided',
+    reason:       reason,
+    message:      msg   || 'None provided',
+    submitted_at: now
+  })
+  .then(() => {
+    successMsg.style.display = 'block';
+    ['ft-first', 'ft-last', 'ft-email', 'ft-phone', 'ft-msg'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    const sel = document.getElementById('ft-reason');
+    sel.selectedIndex = 0;
+    sel.classList.add('placeholder');
+  })
+  .catch((err) => {
+    console.error('EmailJS error:', err);
+    errorMsg.style.display = 'block';
+  })
+  .finally(() => {
+    btn.disabled  = false;
+    btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Submit Inquiry';
+  });
 }
