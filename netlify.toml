@@ -1,4 +1,11 @@
-# 301 redirect từ netlify.app sang domain mới
+# Redirect non-www to www
+[[redirects]]
+  from = "https://medsexpresspharmacy.com/*"
+  to = "https://www.medsexpresspharmacy.com/:splat"
+  status = 301
+  force = true
+
+# Redirect netlify.app to www
 [[redirects]]
   from = "https://medsexpresspharmacy.netlify.app/*"
   to = "https://www.medsexpresspharmacy.com/:splat"
