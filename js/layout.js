@@ -171,10 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ─── EMAILJS ─────────────────────────────────────────────────────────────────
-// Fill in your three EmailJS credentials below, then save.
-const EMAILJS_PUBLIC_KEY  = 'bokVaZCEYsy7cxDKg';   // emailjs.com → Account → API Keys
-const EMAILJS_SERVICE_ID  = 'service_b20c99o';   // emailjs.com → Email Services
-const EMAILJS_TEMPLATE_ID = 'template_rx07yf2';  // emailjs.com → Email Templates
+emailjs.init({ publicKey: 'bokVaZCEYsy7cxDKg' });
 
 function footerSubmit() {
   const first  = document.getElementById('ft-first').value.trim();
@@ -195,13 +192,12 @@ function footerSubmit() {
 
   btn.disabled    = true;
   btn.textContent = 'Sending…';
-  errorMsg.style.display = 'none';
+  successMsg.style.display = 'none';
+  errorMsg.style.display   = 'none';
 
   const now = new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' });
 
-  emailjs.init(EMAILJS_PUBLIC_KEY);
-
-  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+  emailjs.send('service_b20c99o', 'template_2097jvg', {
     to_email:     'medsexpresspharmacyintake@gmail.com',
     from_name:    first + ' ' + last,
     from_email:   email,
@@ -221,6 +217,7 @@ function footerSubmit() {
   })
   .catch((err) => {
     console.error('EmailJS error:', err);
+    errorMsg.textContent = '✗ Error: ' + (err.text || err.message || JSON.stringify(err)) + ' — please call us.';
     errorMsg.style.display = 'block';
   })
   .finally(() => {
