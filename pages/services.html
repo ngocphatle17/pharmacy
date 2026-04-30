@@ -2,30 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pharmacy Services – Spring Creek Pharmacy</title>
+  <meta name="theme-color" content="#613C38">
+
+  <!-- Primary SEO -->
+  <title>Pharmacy Services – Meds Express Pharmacy | Plano, TX</title>
+  <meta name="description" content="Meds Express Pharmacy offers retail prescriptions, non-sterile and sterile compounding, and medication delivery in Plano, TX. Custom formulations for every patient.">
+  <meta name="keywords" content="retail pharmacy Plano TX, sterile compounding Plano, non-sterile compounding DFW, medication delivery Plano, custom compounding pharmacy Texas">
+  <meta name="author" content="Meds Express Pharmacy">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://medsexpresspharmacy.netlify.app/pages/services.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Meds Express Pharmacy">
+  <meta property="og:title" content="Pharmacy Services – Meds Express Pharmacy | Plano, TX">
+  <meta property="og:description" content="Retail, non-sterile, and sterile compounding — customized solutions for every patient in Plano, TX and the DFW area.">
+  <meta property="og:url" content="https://medsexpresspharmacy.netlify.app/pages/services.html">
+  <meta property="og:image" content="https://medsexpresspharmacy.netlify.app/images/compounding.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pharmacy Services – Meds Express Pharmacy | Plano, TX">
+  <meta name="twitter:description" content="Retail, non-sterile, and sterile compounding — customized solutions for every patient in Plano, TX.">
+  <meta name="twitter:image" content="https://medsexpresspharmacy.netlify.app/images/compounding.jpg">
+
+  <!-- Google Search Console verification -->
+  <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE"> -->
+
   <link rel="stylesheet" href="../css/styles.css">
   <style>
-    /* ── Desktop: 1×4 horizontal row ── */
-    .services-detail-grid--4col {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    /* ── Mobile: 2×2 grid ── */
-    @media (max-width: 768px) {
-      .services-detail-grid--4col {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* ── Extra small: stack to 1 column ── */
-    @media (max-width: 420px) {
-      .services-detail-grid--4col {
-        grid-template-columns: 1fr;
-      }
-    }
+    .services-detail-grid--4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    @media (max-width: 768px) { .services-detail-grid--4col { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 420px) { .services-detail-grid--4col { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -43,12 +56,9 @@
       </div>
 
       <div class="services-detail-grid services-detail-grid--4col">
-        <!-- RETAIL -->
         <div class="service-detail-card" id="retail">
           <div class="card-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-10 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-10 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
             <h3>Retail</h3>
           </div>
           <div class="card-body">
@@ -56,15 +66,9 @@
           </div>
         </div>
 
-        <!-- DELIVERY -->
         <div class="service-detail-card" id="delivery">
           <div class="card-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="1" y="3" width="15" height="13" rx="1"/>
-              <path d="M16 8h4l3 3v5h-7V8z"/>
-              <circle cx="5.5" cy="18.5" r="2.5"/>
-              <circle cx="18.5" cy="18.5" r="2.5"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
             <h3>Delivery</h3>
           </div>
           <div class="card-body">
@@ -72,12 +76,9 @@
           </div>
         </div>
 
-        <!-- NON-STERILE -->
         <div class="service-detail-card" id="non-sterile">
           <div class="card-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
             <h3>Non-Sterile Compounding</h3>
           </div>
           <div class="card-body">
@@ -85,12 +86,9 @@
           </div>
         </div>
 
-        <!-- STERILE -->
         <div class="service-detail-card" id="sterile">
           <div class="card-header">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M19.428 15.428a2 2 0 0 0-1.022-.547l-2.387-.477a6 6 0 0 0-3.86.517l-.318.158a6 6 0 0 1-3.86.517L6.05 15.21a2 2 0 0 0-1.806.547M8 4h8l-1 1v5.172a2 2 0 0 0 .586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 0 0 9 10.172V5L8 4z"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 0 0-1.022-.547l-2.387-.477a6 6 0 0 0-3.86.517l-.318.158a6 6 0 0 1-3.86.517L6.05 15.21a2 2 0 0 0-1.806.547M8 4h8l-1 1v5.172a2 2 0 0 0 .586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 0 0 9 10.172V5L8 4z"/></svg>
             <h3>Sterile Compounding</h3>
           </div>
           <div class="card-body">
@@ -99,7 +97,6 @@
         </div>
       </div>
 
-      <!-- CTA Banner -->
       <div style="margin-top: 4rem; background: var(--primary); border-radius: 16px; padding: 3rem; text-align: center; color: var(--white);">
         <h2 style="font-family:'Playfair Display',serif; font-size: 2rem; margin-bottom: 1rem;">Need a Custom Compound?</h2>
         <p style="opacity:0.85; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Our pharmacists are ready to work with you and your provider to create the exact formulation you need.</p>
@@ -109,18 +106,8 @@
   </main>
 
   <div id="footer-placeholder"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="../js/layout.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const logo = document.querySelector('.logo-wrap');
-      if (logo) logo.setAttribute('href', '../index.html');
-      document.querySelectorAll('.site-nav a, .footer-top a').forEach(a => {
-        const href = a.getAttribute('href');
-        if (href && href.startsWith('../')) return;
-        if (href && href.startsWith('pages/')) a.setAttribute('href', '../' + href);
-        if (href && href === '../index.html') return;
-      });
-    });
-  </script>
+  
 </body>
 </html>

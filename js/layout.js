@@ -1,19 +1,19 @@
-// ─── HEADER MODULE ──────────────────────────────────────────────────────────
+// ─── HEADER ──────────────────────────────────────────────────────────────────
 const headerHTML = `
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a class="logo-wrap" href="../index.html">
-      <img class="logo-img" src="../images/logo.png" alt="Meds Express Pharmacy" />
+    <a class="logo-wrap" href="/index.html">
+      <img class="logo-img" src="/images/logo.png" alt="Meds Express Pharmacy" />
     </a>
     <nav class="site-nav" id="site-nav">
       <div class="nav-item">
-        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="/index.html">Home</a>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="../pages/about.html">About Us</a>
+        <a class="nav-link" href="/pages/about.html">About Us</a>
       </div>
       <div class="nav-item">
-        <a class="nav-link has-dropdown" href="../pages/services.html">
+        <a class="nav-link has-dropdown" href="/pages/services.html">
           Pharmacy Services
           <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg>
         </a>
@@ -25,7 +25,7 @@ const headerHTML = `
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link" href="../pages/contact.html">Contact</a>
+        <a class="nav-link" href="/pages/contact.html">Contact</a>
       </div>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
@@ -35,7 +35,7 @@ const headerHTML = `
 </header>
 `;
 
-// ─── FOOTER MODULE ──────────────────────────────────────────────────────────
+// ─── FOOTER ──────────────────────────────────────────────────────────────────
 const footerHTML = `
 <footer class="site-footer">
   <div class="footer-top">
@@ -43,10 +43,12 @@ const footerHTML = `
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../pages/about.html">About Us</a></li>
-          <li><a href="../pages/services.html">Pharmacy Services</a></li>
-          <li><a href="../pages/contact.html">Contact</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/pages/about.html">About Us</a></li>
+          <li><a href="/pages/services.html">Pharmacy Services</a></li>
+          <li><a href="/pages/contact.html">Contact</a></li>
+          <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+          <li><a href="/pages/disclaimer.html">Disclaimer</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -99,20 +101,26 @@ const footerHTML = `
       <p id="ft-error"   style="display:none; color:#f9a8a8; font-size:0.82rem; margin-top:0.5rem;">✗ Something went wrong. Please call us or try again.</p>
     </div>
   </div>
+
   <div class="footer-bottom">
     <p>© ${new Date().getFullYear()} Meds Express Pharmacy. All rights reserved. | 230 W Parker Rd Suite 210-B, Plano TX 75075</p>
+    <p style="margin-top:0.4rem;">
+      <a href="/pages/privacy.html" style="color:rgba(255,255,255,0.45);text-decoration:none;margin:0 0.5rem;" onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Privacy Policy</a>
+      &middot;
+      <a href="/pages/disclaimer.html" style="color:rgba(255,255,255,0.45);text-decoration:none;margin:0 0.5rem;" onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Disclaimer</a>
+    </p>
   </div>
 </footer>
 `;
 
-// ─── INJECT ─────────────────────────────────────────────────────────────────
+// ─── INJECT ──────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const headerTarget = document.getElementById('header-placeholder');
   const footerTarget = document.getElementById('footer-placeholder');
   if (headerTarget) headerTarget.innerHTML = headerHTML;
   if (footerTarget) footerTarget.innerHTML = footerHTML;
 
-  // Hamburger toggle with animated X
+  // Hamburger toggle
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('#hamburger');
     const nav = document.getElementById('site-nav');
@@ -123,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close nav when a nav link is clicked (mobile)
+  // Close nav on link click (mobile)
   document.addEventListener('click', (e) => {
     const link = e.target.closest('.site-nav a');
     if (link) {
@@ -136,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close nav when clicking outside
+  // Close nav on outside click
   document.addEventListener('click', (e) => {
     if (!e.target.closest('#site-header')) {
       const nav = document.getElementById('site-nav');
@@ -154,11 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.classList.toggle('placeholder', e.target.value === '');
     }
   });
-
   const sel = document.getElementById('ft-reason');
   if (sel) sel.classList.add('placeholder');
 
-  // Active nav link
+  // Active nav link highlight
   const links = document.querySelectorAll('.nav-link');
   const path = window.location.pathname;
   links.forEach(link => {

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://medsexpresspharmacy.netlify.app/sitemap.xml
