@@ -1,3 +1,11 @@
+# 301 redirect từ netlify.app sang domain mới
+[[redirects]]
+  from = "https://medsexpresspharmacy.netlify.app/*"
+  to = "https://www.medsexpresspharmacy.com/:splat"
+  status = 301
+  force = true
+
+# Custom 404
 [[redirects]]
   from = "/*"
   to = "/404.html"
